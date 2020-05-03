@@ -20,3 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('car', 'CarController', ['only' => ['index', 'show']]);
+Route::resource('class', 'VehicleClassController', ['only' => ['index', 'show']]);
+Route::resource('spec', 'SpecificationController', ['only' => ['index', 'show']]);

@@ -33,7 +33,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li><a class="nav-link" href="{{ route('class.index') }}">Vehicle Classes</a></li>
+                        <li><a class="nav-link" href="{{ route('spec.index') }}">Specifications</a></li>
+                        <li><a class="nav-link" href="{{ route('car.index') }}">Cars</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

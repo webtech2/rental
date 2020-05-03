@@ -18,6 +18,9 @@ class Specification extends Model
      */
     public function vehicleClass()
     {
-        return $this->belongsTo('App\VehicleClass');
+        return $this->belongsTo('App\VehicleClass', 'class_id');
+        // the foreign key column added as a second parameter since 
+        // the foreign key column name in the table specifications 
+        // is class_id and not the default one vehicle_class_id
     }    
 }
