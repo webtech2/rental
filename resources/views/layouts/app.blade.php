@@ -36,6 +36,7 @@
                         <li><a class="nav-link" href="{{ route('class.index') }}">Vehicle Classes</a></li>
                         <li><a class="nav-link" href="{{ route('spec.index') }}">Specifications</a></li>
                         <li><a class="nav-link" href="{{ route('car.index') }}">Cars</a></li>
+                        <li><a class="nav-link" href="{{ url('spec/create') }}">Create specification</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

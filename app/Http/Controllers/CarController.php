@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Car;
+use App\Specification;
 use Illuminate\Http\Request;
 
 class CarController extends Controller
@@ -18,13 +19,14 @@ class CarController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new car for a specification.
      *
+     * @param  int  $spec_id
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($spec_id)
     {
-        //
+        return view('car_create', array('spec' => Specification::findOrFail($spec_id)));
     }
 
     /**
@@ -35,7 +37,15 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $car = new Car();
+        $car->reg_number = $request['reg_number'];
+        $car->mileage = $request['mileage'];
+        $car->color = $request['color'];
+        $car->condition = $request['condition'];
+        $car->price = $request['price'];
+        $car->specification()->associate(Specification::findOrFail($request['specification_id']));
+        $car->save();        
+        return redirect()->route('spec.show', $request['specification_id']);
     }
 
     /**

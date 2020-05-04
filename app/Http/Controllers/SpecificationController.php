@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Specification;
+use App\VehicleClass;
 use Illuminate\Http\Request;
 
 class SpecificationController extends Controller
@@ -24,7 +25,7 @@ class SpecificationController extends Controller
      */
     public function create()
     {
-        //
+        return view('spec_create', array('classes' => VehicleClass::all()->sortBy('name')->pluck('name','id')));
     }
 
     /**
@@ -35,7 +36,10 @@ class SpecificationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $spec = new Specification();
+        $spec->fill($request->all());
+        $spec->save();
+        return redirect()->action('SpecificationController@show', array($spec->id))->withMessage('Successfully added a new specification!');
     }
 
     /**
