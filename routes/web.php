@@ -13,18 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'VehicleClassController@index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('car', 'CarController', ['only' => ['index', 'show', 'store']]);
-Route::resource('class', 'VehicleClassController', ['only' => ['index', 'show']]);
+Route::resource('class', 'VehicleClassController', ['except' => ['edit', 'update', 'destroy']]);
 Route::resource('spec', 'SpecificationController', ['except' => ['edit', 'update', 'destroy']]);
 Route::get('car/{spec_id}/create', 'CarController@create')->name('car.create');
 
 Route::get('specs/search','SpecificationController@getSearch');
 Route::post('specs/search','SpecificationController@postSearch');
+
+Route::get('admin', 'AdminController');

@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class CarController extends Controller
 {
+    public function __construct() {
+        // only Admins have access to the following methods
+        $this->middleware('admin')->only(['create', 'store']);
+    }
     /**
      * Display a listing of the resource.
      *

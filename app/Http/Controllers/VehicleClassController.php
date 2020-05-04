@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class VehicleClassController extends Controller
 {
+    public function __construct() {
+        // only Admins have access to the following methods
+        $this->middleware('admin')->only(['create', 'store']);
+    }    
+    
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +29,7 @@ class VehicleClassController extends Controller
      */
     public function create()
     {
-        //
+        return view('class_create');
     }
 
     /**
@@ -35,7 +40,16 @@ class VehicleClassController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = $rules = array(
+            'name' => 'required|min:3|max:100|unique:classes',
+        );
+
+        $this->validate($request, $rules);
+
+        $class = new VehicleClass();
+        $class->name = $request->name;
+        $class->save();
+        return redirect('admin')->with('message','Vehicle class '.$class->name.' added!');        
     }
 
     /**
