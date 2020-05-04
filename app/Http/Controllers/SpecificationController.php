@@ -95,4 +95,15 @@ class SpecificationController extends Controller
     {
         //
     }
+    
+    // AJAX view
+    public function getSearch() {
+        return view('search');
+    }
+    // AJAX search
+    public function postSearch(Request $request) {
+        return Specification::where('make', 'LIKE', '%'.$request->get('search').'%')
+                ->orWhere('model', 'LIKE', '%'.$request->get('search').'%')->get();
+    }    
+    
 }

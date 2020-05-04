@@ -11,7 +11,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -37,6 +39,7 @@
                         <li><a class="nav-link" href="{{ route('spec.index') }}">Specifications</a></li>
                         <li><a class="nav-link" href="{{ route('car.index') }}">Cars</a></li>
                         <li><a class="nav-link" href="{{ url('spec/create') }}">Create specification</a></li>
+                        <li><a class="nav-link" href="{{ url('specs/search') }}">Search specification</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

@@ -25,3 +25,6 @@ Route::resource('car', 'CarController', ['only' => ['index', 'show', 'store']]);
 Route::resource('class', 'VehicleClassController', ['only' => ['index', 'show']]);
 Route::resource('spec', 'SpecificationController', ['except' => ['edit', 'update', 'destroy']]);
 Route::get('car/{spec_id}/create', 'CarController@create')->name('car.create');
+
+Route::get('specs/search','SpecificationController@getSearch');
+Route::post('specs/search','SpecificationController@postSearch');
