@@ -13,19 +13,34 @@
                     <div class="form-group row">
                     {{ Form::label('reg_number', 'Registration number', ['class' => 'col-md-4 control-label text-md-right']) }}
                     <div class="col-md-6">
-                    {{ Form::text('reg_number', '', ['class' => 'form-control']) }}
+                    {{ Form::text('reg_number', '', ['class' => 'form-control'.($errors->has('reg_number') ? ' is-invalid' : '')]) }}
+                    @if ($errors->has('reg_number'))
+                        <span class="invalid-feedback">
+                            <strong>{{ $errors->first('reg_number') }}</strong>
+                        </span>
+                    @endif 
                     </div>
                     </div>
                     <div class="form-group row">
                     {{ Form::label('mileage', 'Mileage', ['class' => 'col-md-4 control-label text-md-right']) }}
                     <div class="col-md-6">
-                    {{ Form::number('mileage', '', ['class' => 'form-control']) }}
+                    {{ Form::number('mileage', '', ['class' => 'form-control'.($errors->has('mileage') ? ' is-invalid' : '')]) }}
+                    @if ($errors->has('mileage'))
+                        <span class="invalid-feedback">
+                            <strong>{{ $errors->first('mileage') }}</strong>
+                        </span>
+                    @endif 
                     </div>
                     </div>
                     <div class="form-group row">
                     {{ Form::label('color', 'Color', ['class' => 'col-md-4 control-label text-md-right']) }}
                     <div class="col-md-6">
-                    {{ Form::text('color', '', ['class' => 'form-control']) }}   
+                    {{ Form::text('color', '', ['class' => 'form-control'.($errors->has('color') ? ' is-invalid' : '')]) }}   
+                    @if ($errors->has('color'))
+                        <span class="invalid-feedback">
+                            <strong>{{ $errors->first('color') }}</strong>
+                        </span>
+                    @endif 
                     </div>
                     </div>
                     <div class="form-group row">
@@ -37,7 +52,12 @@
                     <div class="form-group row">
                     {{ Form::label('price', 'Price', ['class' => 'col-md-4 control-label text-md-right']) }}
                     <div class="col-md-6">
-                    {{ Form::text('price', '', ['class' => 'form-control']) }}
+                    {{ Form::text('price', '', ['class' => 'form-control'.($errors->has('price') ? ' is-invalid' : '')]) }}
+                    @if ($errors->has('price'))
+                        <span class="invalid-feedback">
+                            <strong>{{ $errors->first('price') }}</strong>
+                        </span>
+                    @endif 
                     </div>
                     </div> 
                     <div class="form-group row">

@@ -36,6 +36,15 @@ class SpecificationController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = array(
+            'make' => 'required|string|min:2|max:50',
+            'model' => 'required|string|max:50',
+            'year' => 'required|digits:4|integer|min:1970|max:'.(date('Y')),
+            'automatic' => 'required|integer|min:0|max:1',
+            'class_id' => 'required|exists:classes,id',
+        );        
+        $this->validate($request, $rules);  
+        
         $spec = new Specification();
         $spec->fill($request->all());
         $spec->save();

@@ -37,6 +37,15 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = array(
+            'reg_number' => 'required|alpha_num|min:2|max:20',
+            'mileage' => 'nullable|integer|min:0',
+            'color' => 'required|string|min:3|max:50',
+            'specification_id' => 'required|exists:specifications,id',
+            'price' => 'required|numeric|min:0',
+        );        
+        $this->validate($request, $rules); 
+        
         $car = new Car();
         $car->reg_number = $request['reg_number'];
         $car->mileage = $request['mileage'];
