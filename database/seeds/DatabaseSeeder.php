@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(VehicleClassSeeder::class);
         $this->call(SpecificationSeeder::class);
         $this->call(CarSeeder::class);
+        $this->call(ExtraSeeder::class);
         Schema::enableForeignKeyConstraints();
     }
 }
