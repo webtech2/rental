@@ -14,7 +14,7 @@ class AddPriceToCars extends Migration
     public function up()
     {
         Schema::table('cars', function (Blueprint $table) {
-            $table->decimal('price', 8, 2);
+            $table->decimal('price', 8, 2)->default(0.0);
         });
     }
 
