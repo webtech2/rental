@@ -44,6 +44,7 @@
                         <li><a class="nav-link" href="{{ url('specs/search') }}">Search specification</a></li>
                         <li><a class="nav-link" href="{{ action('CarController@getFilter') }}">Filer</a></li>
                         <li><a class="nav-link" href="{{ action('CartController@showCart') }}">Cart</a></li>
+                        <li><a class="nav-link" href="{{ url('orders') }}">Orders</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
