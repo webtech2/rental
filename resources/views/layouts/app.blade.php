@@ -42,6 +42,7 @@
                             <li><a class="nav-link" href="/admin">Admin</a></li>
                         @endif                           
                         <li><a class="nav-link" href="{{ url('specs/search') }}">Search specification</a></li>
+                        <li><a class="nav-link" href="{{ action('CarController@getFilter') }}">Filer</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

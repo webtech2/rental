@@ -28,3 +28,5 @@ Route::get('specs/search','SpecificationController@getSearch');
 Route::post('specs/search','SpecificationController@postSearch');
 
 Route::get('admin', 'AdminController');
+Route::get('filter', 'CarController@getFilter');
+Route::post('filter', 'CarController@postFilter');
