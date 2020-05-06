@@ -13,6 +13,7 @@
                 <h5 class="card-text">Mileage: {{ $car->mileage }}</h5>
                 <h5 class="card-text">Price: {{ $car->price }}</h5>
                 <h5 class="card-text">{{ $car->condition }}</h5>
+                <a class="btn btn-primary float-right" href="{{ action('CartController@showCart', $car->id) }}">Book</a>
                 </div>
             </div>
         </div>

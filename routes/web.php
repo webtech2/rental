@@ -30,3 +30,6 @@ Route::post('specs/search','SpecificationController@postSearch');
 Route::get('admin', 'AdminController');
 Route::get('filter', 'CarController@getFilter');
 Route::post('filter', 'CarController@postFilter');
+
+Route::get('cart/{id?}', 'CartController@showCart');
+Route::post('cart', 'CartController@addOrRemoveFromCart');

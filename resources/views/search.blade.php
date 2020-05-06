@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<script type="text/javascript">
+<script type="application/javascript">
 $(document).ready(function () {
     $("#search").keyup(function () {
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
