@@ -10,7 +10,7 @@ $(document).ready(function () {
             url: url,
             data: { extra_id: e.target.id, _token: CSRF_TOKEN },
             success: function (data) {
-                $("#"+data["extra_id"]).toggleClass("btn-success btn-light");    
+                $("#"+data["extra_id"]).toggleClass("btn-success btn-light");
             },
             error: function (data) {
                 console.log('Error:', data);
@@ -30,8 +30,8 @@ $(document).ready(function () {
                     <div class="card-text">
                         <h5 id="{{ $extra->id }}" class="extra btn @if(in_array($extra->id, $selected)) btn-success @else btn-light @endif">{{ $extra->name }} ({{ $extra->price_per_day }} EUR per day)</h5>
                     </div>
-                @endforeach                    
-                </div>                
+                @endforeach
+                </div>
             </div>
         </div>
         <div class="col-sm">
@@ -47,6 +47,11 @@ $(document).ready(function () {
                 <h5 class="card-text">{{ $car->condition }}</h5>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="row justify-content-end mt-3">
+        <div class="col-3 text-right">
+            <a class="btn btn-success" href="{{ @action("OrderController@create") }}">Create order</a>
         </div>
     </div>
 </div>

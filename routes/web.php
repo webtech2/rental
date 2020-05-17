@@ -33,3 +33,7 @@ Route::post('filter', 'CarController@postFilter');
 
 Route::get('cart/{id?}', 'CartController@showCart');
 Route::post('cart', 'CartController@addOrRemoveFromCart');
+
+Route::get('order/create', 'OrderController@create');
+Route::post('order/create', 'OrderController@store');
+Route::get('order/{id}', 'OrderController@show');
