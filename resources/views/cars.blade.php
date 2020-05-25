@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-sm">
             <div class="list-group">
-                <div class="list-group-item list-group-item-primary"><h4>Cars</h4></div>
+                <div class="list-group-item list-group-item-primary"><h4>{{ __('messages.Cars') }}</h4></div>
                 @each('partials.car_info', $cars, 'car')
             </div>
         </div>

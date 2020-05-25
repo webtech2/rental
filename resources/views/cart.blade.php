@@ -24,11 +24,11 @@ $(document).ready(function () {
     <div class="row">
         <div class="col-sm-8">
             <div class="card">
-                <h4 class="list-group-item list-group-item-primary">Select extras</h4>
+                <h4 class="list-group-item list-group-item-primary">{{ __('messages.Select_extras') }}</h4>
                 <div class="card-body">
                 @foreach ( $allextras as $extra )
                     <div class="card-text">
-                        <h5 id="{{ $extra->id }}" class="extra btn @if(in_array($extra->id, $selected)) btn-success @else btn-light @endif">{{ $extra->name }} ({{ $extra->price_per_day }} EUR per day)</h5>
+                        <h5 id="{{ $extra->id }}" class="extra btn @if(in_array($extra->id, $selected)) btn-success @else btn-light @endif">{{ $extra->name }} ({{ $extra->price_per_day }} {{ __('messages.EUR_per_day') }})</h5>
                     </div>
                 @endforeach                    
                 </div>                
@@ -38,12 +38,12 @@ $(document).ready(function () {
             <div class="card">
                 <h4 class="list-group-item list-group-item-primary">{{ $car->specification->make }} {{$car->specification->model}}</h4>
                 <div class="card-body">
-                <h5 class="card-text">Vehicle class: {{ $car->specification->vehicleClass->name}}</h5>
-                <h5 class="card-text">Year: {{ $car->specification->year }}</h5>
-                <h5 class="card-text">Transmission: @if ($car->specification->automatic) automatic @else manual @endif</h5>
-                <h5 class="card-text">Color: {{ $car->color }}</h5>
-                <h5 class="card-text">Mileage: {{ $car->mileage }}</h5>
-                <h5 class="card-text">Price: {{ $car->price }}</h5>
+                <h5 class="card-text">{{ __('messages.vehicle_class') }}: {{ $car->specification->vehicleClass->name}}</h5>
+                <h5 class="card-text">{{ __('messages.Year') }}: {{ $car->specification->year }}</h5>
+                <h5 class="card-text">{{ __('messages.Transmission') }}: @if ($car->specification->automatic) {{ __('messages.automatic') }} @else {{ __('messages.manual') }} @endif</h5>
+                <h5 class="card-text">{{ __('messages.Color') }}: {{ $car->color }}</h5>
+                <h5 class="card-text">{{ __('messages.Mileage') }}: {{ $car->mileage }}</h5>
+                <h5 class="card-text">{{ __('messages.Price') }}: {{ $car->price }}</h5>
                 <h5 class="card-text">{{ $car->condition }}</h5>
                 </div>
             </div>
@@ -56,7 +56,7 @@ $(document).ready(function () {
     <div class="row">
         <div class="col-sm">
             <div class="card">
-                <h4 class="list-group-item list-group-item-primary">There is not any car in the cart!</h4>
+                <h4 class="list-group-item list-group-item-primary">{{ __('messages.no_cars') }}!</h4>
             </div>
         </div>
     </div>

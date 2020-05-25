@@ -5,12 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="list-group-item list-group-item-primary"><h4>Add a new specification</h4></div>
+                <div class="list-group-item list-group-item-primary"><h4>{{ __('messages.Create_specification') }}</h4></div>
                 <div class="list-group-item">
                     {{ Form::open(['action' => 'SpecificationController@store', 'class' => 'form-horizontal']) }}
 
                     <div class="form-group row">
-                    {{ Form::label('class_id', 'Vehicle class', ['class' => 'col-md-4 control-label text-md-right']) }}
+                    {{ Form::label('class_id', __('messages.vehicle_class'), ['class' => 'col-md-4 control-label text-md-right']) }}
                     <div class="col-md-6">
                     {{ Form::select('class_id', $classes, '', ['class' => 'form-control '.($errors->has('class_id') ? ' is-invalid' : '')]) }}
                     @if ($errors->has('class_id'))
@@ -21,7 +21,7 @@
                     </div>
                     </div>
                     <div class="form-group row">
-                    {{ Form::label('make', 'Make', ['class' => 'col-md-4 control-label text-md-right']) }}
+                    {{ Form::label('make', __('messages.Make'), ['class' => 'col-md-4 control-label text-md-right']) }}
                     <div class="col-md-6">
                     {{ Form::text('make', '', ['class' => 'form-control '.($errors->has('make') ? ' is-invalid' : '')]) }}   
                     @if ($errors->has('make'))
@@ -32,7 +32,7 @@
                     </div>
                     </div>
                     <div class="form-group row">
-                    {{ Form::label('model', 'Model', ['class' => 'col-md-4 control-label text-md-right']) }}
+                    {{ Form::label('model', __('messages.Model'), ['class' => 'col-md-4 control-label text-md-right']) }}
                     <div class="col-md-6">
                     {{ Form::text('model', '', ['class' => 'form-control '.($errors->has('model') ? ' is-invalid' : '')]) }}   
                     @if ($errors->has('model'))
@@ -43,7 +43,7 @@
                     </div>
                     </div>
                     <div class="form-group row">
-                    {{ Form::label('year', 'Year', ['class' => 'col-md-4 control-label text-md-right']) }}
+                    {{ Form::label('year', __('messages.Year'), ['class' => 'col-md-4 control-label text-md-right']) }}
                     <div class="col-md-6">
                     {{ Form::number('year', '', ['class' => 'form-control '.($errors->has('year') ? ' is-invalid' : '')]) }}
                     @if ($errors->has('year'))
@@ -54,11 +54,11 @@
                     </div>
                     </div>
                     <div class="form-group row">
-                    {{ Form::label('transmission', 'Transmission', ['class' => 'col-md-4 control-label text-md-right']) }}
+                    {{ Form::label('transmission', __('messages.Transmission'), ['class' => 'col-md-4 control-label text-md-right']) }}
                     <div class="col-md-6">
-                    {{ Form::label('auto', 'Automatic') }}
+                    {{ Form::label('auto', __('messages.Automatic')) }}
                     {{ Form::radio('automatic', '1', false, ['id' => 'auto', 'class' => ($errors->has('automatic') ? ' is-invalid' : '')]) }}                  
-                    {{ Form::label('manual', 'Manual') }}
+                    {{ Form::label('manual', __('messages.Manual')) }}
                     {{ Form::radio('automatic', '0', false, ['id' => 'manual', 'class' => ($errors->has('automatic') ? ' is-invalid' : '')]) }}                  
                     @if ($errors->has('automatic'))
                         <span class="invalid-feedback">
@@ -69,7 +69,7 @@
                     </div>                    
                     <div class="form-group row">
                     <div class="col-md-6 offset-md-4">
-                    {{ Form::submit('Create', ['class' => 'btn btn-primary']) }}
+                    {{ Form::submit(__('messages.Create'), ['class' => 'btn btn-primary']) }}
                     </div>
                     </div>
                     {{ Form::close() }}

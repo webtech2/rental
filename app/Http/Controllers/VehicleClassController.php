@@ -19,7 +19,7 @@ class VehicleClassController extends Controller
      */
     public function index()
     {
-        return view('classes', array('title' => 'Vehicle Classes', 'classes' => VehicleClass::all()));
+        return view('classes', array('title' => __('messages.vehicle_classes'), 'classes' => VehicleClass::all()));
     }
 
     /**
@@ -49,7 +49,7 @@ class VehicleClassController extends Controller
         $class = new VehicleClass();
         $class->name = $request->name;
         $class->save();
-        return redirect('admin')->with('message','Vehicle class '.$class->name.' added!');        
+        return redirect('admin')->with('message',__('messages.vehicle_class').' '.$class->name.' '.__('messages.added').'!');        
     }
 
     /**

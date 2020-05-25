@@ -6,12 +6,12 @@
             <div class="card">
                 <h4 class="list-group-item list-group-item-primary">{{ $spec->make }} {{$spec->model}}</h4>
                 @include('partials.spec_info')
-                <div class="list-group-item list-group-item-secondary"><h5>Cars</h5></div>
+                <div class="list-group-item list-group-item-secondary"><h5>{{ __('messages.Cars') }}</h5></div>
                 @each('partials.car_info', $spec->cars, 'car')
                 @if ( !Auth::guest() && Auth::user()->isAdmin() )
                 <div class="list-group-item list-group-item-secondary">
                     <h5 class="card-title">
-                        <a href="{{ action('CarController@create', ['spec_id' => $spec->id]) }}">Create a new car</a>
+                        <a href="{{ action('CarController@create', ['spec_id' => $spec->id]) }}">{{ __('messages.Create_car') }}</a>
                     </h5>
                 </div>
                 @endif 

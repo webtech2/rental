@@ -23,7 +23,7 @@ $(document).ready(function () {
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><h4 class="card-title">Search</h4></div>
+                <div class="card-header"><h4 class="card-title">{{ __('messages.Search') }}</h4></div>
                 <div class="card-body">
                     <input type="text" id="search">
                     <div class="card-text spec"></div>

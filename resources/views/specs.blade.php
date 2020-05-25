@@ -5,7 +5,7 @@
         <div class="col-sm">
             <div class="list-group">
                 <div class="list-group-item list-group-item-primary">
-                    <h4>Car Specifications for Vehicle Class: {{ $class->name ?? 'All classes' }}</h4>
+                    <h4>{{ __('messages.Specifications_for_Class') }}: {{ $class->name ?? __('messages.All_classes') }}</h4>
                 </div>
                 @foreach ( $specs as $spec )
                 <div class="list-group-item">

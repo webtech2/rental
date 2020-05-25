@@ -35,28 +35,30 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li><a class="nav-link" href="{{ route('class.index') }}">Vehicle Classes</a></li>
-                        <li><a class="nav-link" href="{{ route('spec.index') }}">Specifications</a></li>
-                        <li><a class="nav-link" href="{{ route('car.index') }}">Cars</a></li>
+                        <li><a class="nav-link" href="{{ route('class.index') }}">{{ __('messages.vehicle_classes') }}</a></li>
+                        <li><a class="nav-link" href="{{ route('spec.index') }}">{{ __('messages.Specifications') }}</a></li>
+                        <li><a class="nav-link" href="{{ route('car.index') }}">{{ __('messages.Cars') }}</a></li>
                         @if ( !Auth::guest() && Auth::user()->isAdmin() )
-                            <li><a class="nav-link" href="/admin">Admin</a></li>
+                            <li><a class="nav-link" href="/admin">{{ __('messages.Admin') }}</a></li>
                         @endif                           
-                        <li><a class="nav-link" href="{{ url('specs/search') }}">Search specification</a></li>
-                        <li><a class="nav-link" href="{{ action('CarController@getFilter') }}">Filer</a></li>
-                        <li><a class="nav-link" href="{{ action('CartController@showCart') }}">Cart</a></li>
-                        <li><a class="nav-link" href="{{ url('orders') }}">Orders</a></li>
+                        <li><a class="nav-link" href="{{ url('specs/search') }}">{{ __('messages.Search_specification') }}</a></li>
+                        <li><a class="nav-link" href="{{ action('CarController@getFilter') }}">{{ __('messages.Filter') }}</a></li>
+                        <li><a class="nav-link" href="{{ action('CartController@showCart') }}">{{ __('messages.Cart') }}</a></li>
+                        <li><a class="nav-link" href="{{ url('orders') }}">{{ __('messages.Orders') }}</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <li><a class="nav-link" href="/lang/lv">LV</a></li>
+                        <li><a class="nav-link" href="/lang/en">EN</a></li>  
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('messages.Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('messages.Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -69,7 +71,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('messages.Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

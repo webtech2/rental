@@ -33,3 +33,5 @@ Route::post('filter', 'CarController@postFilter');
 
 Route::get('cart/{id?}', 'CartController@showCart');
 Route::post('cart', 'CartController@addOrRemoveFromCart');
+
+Route::get('lang/{locale}','LanguageController');

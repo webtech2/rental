@@ -5,13 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="list-group-item list-group-item-primary"><h4>Add a new car for {{ $spec->make }} {{$spec->model}}</h4></div>
+                <div class="list-group-item list-group-item-primary"><h4>{{ __('messages.Add_new_car_for') }} {{ $spec->make }} {{$spec->model}}</h4></div>
                 @include('partials.spec_info')
                 <div class="list-group-item">
                     {{ Form::open(['action' => 'CarController@store', 'class' => 'form-horizontal']) }}
                     {{ Form::hidden('specification_id', $spec->id) }}
                     <div class="form-group row">
-                    {{ Form::label('reg_number', 'Registration number', ['class' => 'col-md-4 control-label text-md-right']) }}
+                    {{ Form::label('reg_number', __('messages.Registration_number'), ['class' => 'col-md-4 control-label text-md-right']) }}
                     <div class="col-md-6">
                     {{ Form::text('reg_number', '', ['class' => 'form-control'.($errors->has('reg_number') ? ' is-invalid' : '')]) }}
                     @if ($errors->has('reg_number'))
@@ -22,7 +22,7 @@
                     </div>
                     </div>
                     <div class="form-group row">
-                    {{ Form::label('mileage', 'Mileage', ['class' => 'col-md-4 control-label text-md-right']) }}
+                    {{ Form::label('mileage', __('messages.Mileage'), ['class' => 'col-md-4 control-label text-md-right']) }}
                     <div class="col-md-6">
                     {{ Form::number('mileage', '', ['class' => 'form-control'.($errors->has('mileage') ? ' is-invalid' : '')]) }}
                     @if ($errors->has('mileage'))
@@ -33,7 +33,7 @@
                     </div>
                     </div>
                     <div class="form-group row">
-                    {{ Form::label('color', 'Color', ['class' => 'col-md-4 control-label text-md-right']) }}
+                    {{ Form::label('color', __('messages.Color'), ['class' => 'col-md-4 control-label text-md-right']) }}
                     <div class="col-md-6">
                     {{ Form::text('color', '', ['class' => 'form-control'.($errors->has('color') ? ' is-invalid' : '')]) }}   
                     @if ($errors->has('color'))
@@ -44,13 +44,13 @@
                     </div>
                     </div>
                     <div class="form-group row">
-                    {{ Form::label('condition', 'Condition', ['class' => 'col-md-4 control-label text-md-right']) }}
+                    {{ Form::label('condition', __('messages.Condition'), ['class' => 'col-md-4 control-label text-md-right']) }}
                     <div class="col-md-6">
                     {{ Form::textArea('condition', '', ['class' => 'form-control']) }}
                     </div>
                     </div>                   
                     <div class="form-group row">
-                    {{ Form::label('price', 'Price', ['class' => 'col-md-4 control-label text-md-right']) }}
+                    {{ Form::label('price', __('messages.Price'), ['class' => 'col-md-4 control-label text-md-right']) }}
                     <div class="col-md-6">
                     {{ Form::text('price', '', ['class' => 'form-control'.($errors->has('price') ? ' is-invalid' : '')]) }}
                     @if ($errors->has('price'))
@@ -62,7 +62,7 @@
                     </div> 
                     <div class="form-group row">
                     <div class="col-md-6 offset-md-4">
-                    {{ Form::submit('Create', ['class' => 'btn btn-primary']) }}
+                    {{ Form::submit(__('messages.Create'), ['class' => 'btn btn-primary']) }}
                     </div>
                     </div>
                     {{ Form::close() }}
